@@ -119,5 +119,21 @@ VERSION:
 
 
 .PHONY: release
-release: env CHANGES.md VERSION requirements.txt
+release: env CHANGES.md VERSION requirements.txt .github/workflows/docker-push.yml
 	bash -c 'source env/bin/activate && set -x && fullrelease'
+
+
+.github/workflows:
+	mkdir -p .github/workflows
+
+
+.github/workflows/docker-push.yml: .github/workflows
+	curl \
+		-sL \
+		https://raw.githubusercontent.com/daxxog/trufflehog-testing/master/.github/workflows/docker-push.yml \
+		> .github/workflows/docker-push.yml \
+	;
+	if git status .github/workflows/docker-push.yml | grep -q .github/workflows/docker-push.yml; then \
+		git add .github/workflows/docker-push.yml; \
+		git commit -m 'downloaded:   .github/workflows/docker-push.yml'; \
+	fi
