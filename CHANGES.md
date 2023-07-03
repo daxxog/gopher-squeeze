@@ -1,4 +1,4 @@
-## 0.0.2 (unreleased)
+## 0.0.2 (2023-07-03)
 
 
 - Added GitHub action to publish to dockerhub.
