@@ -13,7 +13,7 @@ Gopher Squeeze is a program written in Go that takes input from STDIN in chunks,
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/gopher-squeeze.git
+   git clone https://github.com/daxxog/gopher-squeeze.git
    ```
 
 2. Navigate to the project directory:
