@@ -25,7 +25,7 @@ Gopher Squeeze is a program written in Go that takes input from STDIN in chunks,
 3. Build the client and server binaries:
 
    ```bash
-   go build .
+   make
    ```
 
 ## Usage
