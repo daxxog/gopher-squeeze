@@ -52,7 +52,7 @@ Gopher Squeeze is a program written in Go that takes input from STDIN in chunks,
 1. Set the `WEBHOOK_ENDPOINT` environment variable with the same secret value used for the server:
 
    ```bash
-   export WEBHOOK_ENDPOINT=http://localhost:8000/your-secret
+   export WEBHOOK_ENDPOINT=http://localhost:8000/log/your-secret
    ```
 
 2. Pipe the input data to the client binary:
