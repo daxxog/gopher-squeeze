@@ -1,7 +1,7 @@
 ## 0.0.3 (unreleased)
 
 
-- Nothing changed yet.
+- Increased chunkSize from 100 to 4096 for more efficient compression.
 
 
 ## 0.0.2 (2023-07-03)
