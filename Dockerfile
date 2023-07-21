@@ -31,7 +31,16 @@ FROM busybox:1-musl as busybox
 # Use a debian image for the final stage
 FROM debian:12 AS final
 COPY --from=busybox /bin/busybox /bin/busybox
-# FROM alpine:latest AS final
+# upgrade debian packages
+ENV DEBIAN_FRONTEND="noninteractive"
+# fix "September 30th problem"
+# https://github.com/nodesource/distributions/issues/1266#issuecomment-931597235
+RUN apt update; apt install -y ca-certificates && \
+    apt update; \
+    apt install apt-utils -y \
+    && apt upgrade -y \
+    && rm -rf /var/lib/apt/lists/* \
+;
 
 # Set the working directory inside the container
 WORKDIR /app
