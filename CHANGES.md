@@ -1,4 +1,4 @@
-## 0.0.5 (unreleased)
+## 0.0.5 (2023-07-21)
 
 
 - Add TLS certs to container image.
