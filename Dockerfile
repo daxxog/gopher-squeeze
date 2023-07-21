@@ -25,8 +25,12 @@ RUN cd server && go build -o gopher-squeeze
 # Build the client binary
 RUN cd client && go build -o gopher-squeeze
 
-# Use a minimal base image for the final stage
-FROM busybox:1-musl AS final
+# Static busybox for adduser command
+FROM busybox:1-musl as busybox
+
+# Use a debian image for the final stage
+FROM debian:12 AS final
+COPY --from=busybox /bin/busybox /bin/busybox
 # FROM alpine:latest AS final
 
 # Set the working directory inside the container
@@ -41,7 +45,7 @@ RUN chmod +x ./server/gopher-squeeze ./client/gopher-squeeze
 EXPOSE 8000
 
 # Create a non-root user
-RUN adduser -D -u 1000 gopher
+RUN /bin/busybox adduser -D -u 1000 gopher
 
 # Set the ownership and permissions for the files
 RUN chown -R gopher:gopher .
