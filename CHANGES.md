@@ -1,4 +1,4 @@
-## 0.0.4 (unreleased)
+## 0.0.4 (2023-07-21)
 
 
 - Debian base image.
