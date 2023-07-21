@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	chunkSize = 100 // Predefined increment for reading from STDIN
+	chunkSize = 4096 // Predefined increment for reading from STDIN
 )
 
 func main() {
