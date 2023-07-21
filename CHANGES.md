@@ -1,7 +1,7 @@
 ## 0.0.5 (unreleased)
 
 
-- Nothing changed yet.
+- Add TLS certs to container image.
 
 
 ## 0.0.4 (2023-07-21)
